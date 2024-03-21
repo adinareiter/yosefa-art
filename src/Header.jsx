@@ -1,30 +1,91 @@
 export function Header() {
   return (
-    <div className="header-container">
-      <div className="image-container">
-        <img src="src/pictures/Your paragraph text (1).png" alt="yosefa signature" />
-      </div>
-
-      <div className="header-info">
-        <h2>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container ">
+        <div className="image-container">
+          <img src="src/pictures/Your paragraph text (1).png" alt="yosefa signature" />
+        </div>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="d-flex" id="navbarSupportedContent">
           {localStorage.jwt === undefined ? (
-            <div>
-              {" "}
-              <a href="/">home</a> | <a href="/gallery">gallery</a> | <a href="/contact">Contact</a> |
-              {/* <a href="/originals">originals</a> |{" "}
-              <a href="/semi-originals">semi-originals</a> |{" "}
-              <a href="/waterdale-collabs">waterdale collabs originals</a>  */}
-            </div>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/contact">
+                  Contact
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Shop
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a className="dropdown-item" href="/gallery">
+                      All Paintings
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           ) : (
-            <div>
-              <a href="/admin-page">Admin Page</a> |<a href="/">home</a> | <a href="/gallery">gallery</a> |{" "}
-              <a href="/contact">Contact</a>
-              {/* <a href="/originals">originals</a> | <a href="/semi-originals">semi-originals</a> |{" "}
-              <a href="/waterdale-collabs">waterdale collabs originals</a> |  */}
-            </div>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/contact">
+                  Contact
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Shop
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a className="dropdown-item" href="/gallery">
+                      All Paintings
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           )}
-        </h2>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
+
+export default Header;

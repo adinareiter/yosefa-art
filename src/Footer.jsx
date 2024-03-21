@@ -8,17 +8,23 @@ export function Footer() {
     window.location.href = "/";
   };
   return (
-    <div className="footer-container">
-      <div>Copyright &copy; YOSEFA 2024</div>
-      {localStorage.jwt === undefined ? (
-        <a href="/admin-login">Admin Login</a>
-      ) : (
-        <div>
-          <a href="#" className="nav-link" onClick={handleClick}>
-            Admin Logout
-          </a>
-        </div>
-      )}
-    </div>
+    <footer className="py-5 bg-dark flex-stick">
+      <div className="container">
+        <p className="m-0 text-center text-white">Copyright &copy; Yosefa 2024</p>
+        {localStorage.jwt === undefined ? (
+          <div className="m-0 text-center text-white">
+            <a href="/admin-login" className="m-0 text-white">
+              Admin Login
+            </a>
+          </div>
+        ) : (
+          <div className="m-0 text-center text-white">
+            <a href="#" className="m-0 text-white " onClick={handleClick}>
+              Admin Logout
+            </a>
+          </div>
+        )}
+      </div>
+    </footer>
   );
 }

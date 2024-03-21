@@ -63,50 +63,70 @@ export function PaintingsNew() {
         <div>
           <h2>New Painting</h2>
         </div>
-
-        <form onSubmit={handleSubmit}>
-          <div>
-            <div>
-              <input className="form-control" type="text" placeholder="Description of Item *" name="description" />
-              <div className="invalid-feedback">A description is required.</div>
-              <h3 className="newitem section-subheading">Enter image URLs:</h3>
-              <div className="form-group">
-                {imageUrls.map((url, index) => (
+        <div className="container">
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Create a new painting</h2>
+          <div className="divider-custom">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
+            </div>
+            <div className="divider-custom-line"></div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-xl-7">
+              <form onSubmit={handleSubmit}>
+                <div className="form-floating mb-3">
                   <input
-                    key={index}
                     className="form-control"
+                    id="name"
                     type="text"
-                    placeholder={`Image Url ${index + 1} *`}
-                    value={url}
-                    onChange={(event) => handleImageUrlChange(index, event.target.value)}
+                    placeholder="Enter description..."
+                    data-sb-validations="required"
+                    name="description"
                   />
-                ))}
-              </div>
-              {imageUrls.length < 20 && (
-                <button type="button" onClick={handleAddImageUrl}>
-                  Add Image URL
-                </button>
-              )}
-              <div>
-                Upload Image
-                <input type="file" onChange={handleSetFile} />
-              </div>
-              <button type="button" onClick={handleCancel}>
-                Cancel
-              </button>{" "}
-              {/* Button to cancel */}
+                  <label htmlFor="name">Description</label>
+                  <div className="invalid-feedback" data-sb-feedback="name:required">
+                    A description is required.
+                  </div>
+                </div>
+                <div className="form-group mb-3">
+                  {imageUrls.map((url, index) => (
+                    <input
+                      key={index}
+                      className="form-control"
+                      type="text"
+                      placeholder={`Image Url ${index + 1} *`}
+                      value={url}
+                      onChange={(event) => handleImageUrlChange(index, event.target.value)}
+                    />
+                  ))}
+                </div>
+                {imageUrls.length < 20 && (
+                  <button className="btn btn-outline-dark mt-auto" type="button" onClick={handleAddImageUrl}>
+                    Add Image URL
+                  </button>
+                )}
+                <div>
+                  Upload Image: <input type="file" onChange={handleSetFile} />
+                </div>
+                <button type="button" className="btn btn-outline-dark mt-auto" onClick={handleCancel}>
+                  Cancel
+                </button>{" "}
+                <div>
+                  {errors.map((error, index) => (
+                    <div key={index}>{error}</div>
+                  ))}
+                </div>
+                <div className="pt-5">
+                  <button type="submit" className="btn btn-outline-dark mt-auto">
+                    Add New Painting
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-
-          <div className="text-center text-danger mb-3">
-            {errors.map((error, index) => (
-              <div key={index}>{error}</div>
-            ))}
-          </div>
-          <div className="text-center">
-            <button type="submit">Add New Painting</button>
-          </div>
-        </form>
+        </div>
+        ;
       </div>
     </section>
   );

@@ -133,7 +133,7 @@ export function Content() {
     <Router>
       <div className="content-container content">
         <Routes>
-          <Route path="/" element={<Bio />} />
+          <Route path="/" element={<Bio paintings={paintings} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<PaintingsIndex paintings={paintings} />} />
           <Route path="painting/:id" element={<PaintingShow painting={currentPainting} />} />

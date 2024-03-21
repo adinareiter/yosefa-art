@@ -8,42 +8,32 @@ export function AdminPage(props) {
       <div id="PaintingsNew">
         <PaintingsNew />
       </div>
-      {props.paintings.map((painting) => (
-        <div key={painting.id} className="col-lg-4 col-sm-6 mb-4">
-          <div className="portfolio-caption">
-            <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
-              <div className="carousel-inner">
-                {painting.images.map((image, index) => (
-                  <div key={index} className={`carousel-painting ${index === 0 ? "active" : ""}`}>
-                    <img style={{ maxWidth: "200px", maxHeight: "200px" }} src={image.url} alt={`Image ${index + 1}`} />
+      <section className="py-5">
+        <div className="container px-4 px-lg-5 mt-5">
+          <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {props.paintings.map((painting) => (
+              <div key={painting.id} className="col mb-5">
+                <div className="card h-100">
+                  <img className="card-img-top" src={painting.images[0].url} alt="..." />
+                  <div className="card-body p-4">
+                    <div className="text-center">
+                      <h5 className="fw-bolder">{painting.description}</h5>
+                    </div>
                   </div>
-                ))}
+                  <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div className="text-center">
+                      <a className="btn btn-outline-dark mt-auto" onClick={() => props.onPaintingShow(painting)}>
+                        EDIT PAINTING
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="portfolio-caption-heading">{painting.description}</div>
-            <button onClick={() => props.onPaintingShow(painting)} className="portfolio-link">
-              EDIT PAINTING
-            </button>
+            ))}
           </div>
         </div>
-      ))}
-      {/* <div>
-        <strong>Categories: </strong>
-        <div>
-          <Link to="/category-new">ADD NEW CATEGORY</Link>
-        </div>
-        <div>
-          {props.categories.map((category) => (
-            <div key={category.id}>
-              {" "}
-              <div>
-                <span>{category.name}, </span>
-              </div>
-              <button onClick={() => props.onShowCategory(category)}>EDIT CATEGORY</button>
-            </div>
-          ))}
-        </div> */}
-      {/* </div> */}
+      </section>
+      ;
     </div>
   );
 }

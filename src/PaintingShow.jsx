@@ -18,7 +18,14 @@ export function PaintingShow() {
 
   return (
     <div>
-      <img src={painting.images} alt="" />
+      <div className="carousel-inner">
+        {painting.images &&
+          painting.images.map((image, index) => (
+            <div key={index} className={`carousel-painting ${index === 0 ? "active" : ""}`}>
+              <img style={{ maxWidth: "200px", maxHeight: "200px" }} src={image.url} alt={`Image ${index + 1}`} />
+            </div>
+          ))}
+      </div>
       <h4>{painting.description}</h4>
       <button>
         <Link to="/contact">Contact Us</Link>

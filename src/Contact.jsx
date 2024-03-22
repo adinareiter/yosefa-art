@@ -1,6 +1,9 @@
 import emailjs from "emailjs-com";
+import { useState } from "react";
 
 export function Contact() {
+  const [messageSent, setMessageSent] = useState(false);
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -15,13 +18,20 @@ export function Contact() {
     );
   }
 
+  const handleClick = () => {
+    // Perform any action you want when the button is clicked
+
+    // After 5 seconds, set messageSent state to true
+    setTimeout(() => {
+      setMessageSent(true);
+    }, 2000);
+  };
+
   return (
     <div>
       <section className="page-section" id="contact">
         <div className="container">
-          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
-            Email for Custom Painting
-          </h2>
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
           <div className="divider-custom">
             <div className="divider-custom-line"></div>
             <div className="divider-custom-icon">
@@ -31,10 +41,11 @@ export function Contact() {
           </div>
           <div className="row justify-content-center">
             <div className="col-lg-8 col-xl-7">
-              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+              <form onSubmit={sendEmail} id="contactForm" data-sb-form-api-token="API_TOKEN">
                 <div className="form-floating mb-3">
                   <input
                     className="form-control"
+                    name="name"
                     id="name"
                     type="text"
                     placeholder="Enter your name..."
@@ -48,6 +59,7 @@ export function Contact() {
                 <div className="form-floating mb-3">
                   <input
                     className="form-control"
+                    name="email"
                     id="email"
                     type="email"
                     placeholder="name@example.com"
@@ -64,19 +76,21 @@ export function Contact() {
                 <div className="form-floating mb-3">
                   <input
                     className="form-control"
-                    id="phone"
+                    name="subject"
+                    id="subject"
                     type="tel"
                     placeholder="(123) 456-7890"
                     data-sb-validations="required"
                   />
-                  <label htmlFor="phone">Phone number</label>
-                  <div className="invalid-feedback" data-sb-feedback="phone:required">
-                    A phone number is required.
+                  <label htmlFor="subject">Subject</label>
+                  <div className="invalid-feedback" data-sb-feedback="subject:required">
+                    A subject is required.
                   </div>
                 </div>
                 <div className="form-floating mb-3">
                   <textarea
                     className="form-control"
+                    name="message"
                     id="message"
                     type="text"
                     placeholder="Enter your message here..."
@@ -88,9 +102,14 @@ export function Contact() {
                   </div>
                 </div>
 
-                <button className="btn btn-primary btn-xl " id="submitButton" type="submit">
+                <button onClick={handleClick} className="btn btn-primary btn-xl " id="submitButton" type="submit">
                   Send
                 </button>
+                {messageSent && (
+                  <div className="alert alert-success mt-3" role="alert">
+                    Message sent!
+                  </div>
+                )}
               </form>
             </div>
           </div>
@@ -109,24 +128,3 @@ export function Contact() {
     </div>
   );
 }
-
-// <h1>Contact</h1>
-// <form className="contact-form" onSubmit={sendEmail}>
-//   <div>
-//     <input type="text" placeholder="Name" name="name" />
-//   </div>
-//   <div>
-//     <input type="email" placeholder="Email" name="email" />
-//   </div>
-//   <div>
-//     <input type="text" placeholder="Subject" name="subject" />
-//   </div>
-//   <div>
-//     <textarea type="text" placeholder="Your message" name="message" />
-//   </div>
-//   <input type="submit" value="Send" />
-// </form>
-// <div>
-//   <h3>Phone: 872-203-1815</h3>
-//   <h3>Email: Yosefabruzoart@gmail.com</h3>
-// </div>

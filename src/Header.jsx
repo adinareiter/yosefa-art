@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container ">
         <div className="image-container">
           <img src="src/pictures/Your paragraph text (1).png" alt="yosefa signature" />
@@ -18,39 +18,25 @@ export function Header() {
         </button>
         <div className="d-flex" id="navbarSupportedContent">
           {localStorage.jwt === undefined ? (
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="header">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
+                <a className="nav-link active" aria-current="page" href="/gallery">
+                  Gallery
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" href="/contact">
                   Contact
                 </a>
               </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Shop
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a className="dropdown-item" href="/gallery">
-                      All Paintings
-                    </a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           ) : (
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="header">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/admin-page">
                   Admin Page
@@ -62,28 +48,14 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
-                  Contact
+                <a className="nav-link active" aria-current="page" href="/gallery">
+                  Gallery
                 </a>
               </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Shop
+              <li className="nav-item">
+                <a className="nav-link active" href="/contact">
+                  Contact
                 </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a className="dropdown-item" href="/gallery">
-                      All Paintings
-                    </a>
-                  </li>
-                </ul>
               </li>
             </ul>
           )}

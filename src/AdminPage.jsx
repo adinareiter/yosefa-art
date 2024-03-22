@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export function AdminPage(props) {
   return (
-    <div className="pb-5">
-      <h1>Admin Page</h1>
+    <div className="pb-5 text-center">
+      <h1 className="pt-5">Admin Page</h1>
       <div id="PaintingsNew">
         <PaintingsNew />
       </div>
@@ -20,8 +20,8 @@ export function AdminPage(props) {
                       <h5 className="fw-bolder">{painting.description}</h5>
                     </div>
                   </div>
-                  <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div className="text-center">
+                  <div className="card-footer p-4 pt-0 border-top-0 bg-transparent ">
+                    <div className="text-center" id="edit">
                       <a className="btn btn-outline-dark mt-auto" onClick={() => props.onPaintingShow(painting)}>
                         EDIT PAINTING
                       </a>
@@ -33,7 +33,6 @@ export function AdminPage(props) {
           </div>
         </div>
       </section>
-      ;
     </div>
   );
 }

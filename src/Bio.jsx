@@ -1,27 +1,43 @@
-import { PaintingsIndex } from "./PaintingsIndex";
+import { Link } from "react-router-dom";
 
-export function Bio({ paintings }) {
+export function Bio(props) {
+  // Slice the first 5 paintings from the array
+  const firstFivePaintings = props.paintings.slice(0, 5);
+
   return (
-    <div>
+    <div className="bg-dark">
       <header className="bg-dark py-5">
         <div className="container px-4 px-lg-5 my-5">
           <div className="text-center text-white">
-            <h1 className="display-4 fw-bolder">Meet Yosefa</h1>
+            <h1 className="display-4 fw-bolder">Yosefa's Art</h1>
             <p className="lead fw-normal text-white-50 mb-0">
-              {" "}
-              Welcome to the vibrant world of Yosefa, where art meets tradition in a symphony of colors and creativity.
-              As a Jewish frum artist, Yosefa infuses her work with passion, spirituality, and a deep connection to her
-              roots. Her talent shines through in every brushstroke, bringing to life captivating Judaica modern
-              paintings that resonate with the soul. Inspired by the beauty of the Kosel and other cherished symbols of
-              Judaism, Yosefa's art transports you to a realm where tradition meets innovation. With each piece, she
-              invites you on a journey of discovery and reflection, weaving together elements of faith and contemporary
-              expression. Yosefa's warm personality and artistic vision make her not only a talented creator but also a
-              cherished soul. Explore her gallery, and allow her art to adorn your space with beauty and meaning.
+              Step into Yosefa's art studio and explore vibrant and expressive canvases awaiting your discovery. Delight
+              in a range of works, from abstract landscapes to still life compositions, all available for purchase. Find
+              the perfect canvas to bring color and creativity into your home or office. With each piece crafted with
+              care and attention to detail, there's something here to speak to your soul.
             </p>
+          </div>
+          <div className="text-center pt-4">
+            <Link to="/gallery">
+              <button className="btn btn-outline-light btn-lg">View Gallery</button>
+            </Link>
           </div>
         </div>
       </header>
-      <PaintingsIndex paintings={paintings} />
+
+      {firstFivePaintings.map((painting, index) => (
+        <div key={painting.id} className="container-fluid mb-5 mt-5 container text-center" id="bio-image">
+          <div className="row card-body">
+            <div className="col-sm-8 rounded mx-auto d-block">
+              <img
+                src={painting.images[0].url}
+                alt={`Image ${index + 1} of painting`}
+                className="painting-image w-100 rounded"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

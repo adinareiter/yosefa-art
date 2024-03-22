@@ -39,19 +39,19 @@ export function PaintingsNew() {
     }
   };
 
-  const handleAddImageUrl = () => {
-    if (imageUrls.length < 20) {
-      setImageUrls([...imageUrls, ""]); // Add an empty string to imageUrls array
-    } else {
-      alert("You can only add up to 20 image URLs.");
-    }
-  };
+  // const handleAddImageUrl = () => {
+  //   if (imageUrls.length < 20) {
+  //     setImageUrls([...imageUrls, ""]); // Add an empty string to imageUrls array
+  //   } else {
+  //     alert("You can only add up to 20 image URLs.");
+  //   }
+  // };
 
-  const handleImageUrlChange = (index, url) => {
-    const newImageUrls = [...imageUrls];
-    newImageUrls[index] = url;
-    setImageUrls(newImageUrls);
-  };
+  // const handleImageUrlChange = (index, url) => {
+  //   const newImageUrls = [...imageUrls];
+  //   newImageUrls[index] = url;
+  //   setImageUrls(newImageUrls);
+  // };
 
   const handleCancel = () => {
     window.location.href = "/admin-page";
@@ -59,12 +59,12 @@ export function PaintingsNew() {
 
   return (
     <section>
-      <div>
-        <div>
-          <h2>New Painting</h2>
-        </div>
+      <div id="new">
+        <div></div>
         <div className="container">
-          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">Create a new painting</h2>
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0 mt-5">
+            Create a new painting
+          </h2>
           <div className="divider-custom">
             <div className="divider-custom-line"></div>
             <div className="divider-custom-icon">
@@ -89,7 +89,7 @@ export function PaintingsNew() {
                     A description is required.
                   </div>
                 </div>
-                <div className="form-group mb-3">
+                {/* <div className="form-group mb-3">
                   {imageUrls.map((url, index) => (
                     <input
                       key={index}
@@ -105,11 +105,11 @@ export function PaintingsNew() {
                   <button className="btn btn-outline-dark mt-auto" type="button" onClick={handleAddImageUrl}>
                     Add Image URL
                   </button>
-                )}
-                <div>
+                )} */}
+                <div className="mt-4">
                   Upload Image: <input type="file" onChange={handleSetFile} />
                 </div>
-                <button type="button" className="btn btn-outline-dark mt-auto" onClick={handleCancel}>
+                <button type="button" className="btn btn-outline-dark mt-4" onClick={handleCancel}>
                   Cancel
                 </button>{" "}
                 <div>
@@ -117,8 +117,8 @@ export function PaintingsNew() {
                     <div key={index}>{error}</div>
                   ))}
                 </div>
-                <div className="pt-5">
-                  <button type="submit" className="btn btn-outline-dark mt-auto">
+                <div className="pt-3">
+                  <button type="submit" className="btn btn-outline-success mt-auto">
                     Add New Painting
                   </button>
                 </div>
@@ -126,7 +126,6 @@ export function PaintingsNew() {
             </div>
           </div>
         </div>
-        ;
       </div>
     </section>
   );

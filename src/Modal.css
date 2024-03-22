@@ -1,4 +1,5 @@
 .modal-background {
+  border-radius: 9;
   display: block;
   position: fixed;
   top: 0;
@@ -23,7 +24,7 @@
   margin: 20px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  border: solid 1px red;
+  border: solid 1px black;
 }
 
 #text {
@@ -31,11 +32,11 @@
 }
 
 .close {
-  color:navy;
+  color:rgb(112, 104, 104);
 }
 
 .close:hover {
-  color: red;
+  color: black;
 }
 
 .modal-main button.close {

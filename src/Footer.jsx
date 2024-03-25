@@ -13,8 +13,8 @@ export function Footer() {
         <p className="m-0 text-center text-white">Copyright &copy; Yosefa 2024</p>
         {localStorage.jwt === undefined ? (
           <div className="m-0 text-center text-white">
-            <a href="/admin-login" className="m-0 text-white">
-              Admin Login
+            <a href="/admin-login" className="m-0 text-light">
+              ☈
             </a>
           </div>
         ) : (

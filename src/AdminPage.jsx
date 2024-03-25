@@ -1,5 +1,4 @@
 import { PaintingsNew } from "./PaintingsNew";
-import { Link } from "react-router-dom";
 
 export function AdminPage(props) {
   return (

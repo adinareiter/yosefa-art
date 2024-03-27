@@ -29,11 +29,15 @@ export function Bio(props) {
         <div key={painting.id} className="container-fluid mb-5 mt-5 container text-center" id="bio-image">
           <div className="row card-body">
             <div className="col-sm-8 rounded mx-auto d-block">
-              <img
-                src={painting.images[0].url}
-                alt={`Image ${index + 1} of painting`}
-                className="painting-image w-100 rounded"
-              />
+              {painting?.images[0]?.url ? (
+                <img
+                  src={painting.images[0].url}
+                  alt={`Image ${index + 1} of painting`}
+                  className="painting-image w-100 rounded"
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>

@@ -56,7 +56,11 @@ export function PaintingsIndex(props) {
 
   // Check if paintings array is not provided or is empty
   if (!paintings || paintings.length === 0) {
-    return <div>No paintings to display</div>;
+    return (
+      <div className="text-center pt-5 pb-5">
+        <h1>No paintings to display</h1>
+      </div>
+    );
   }
 
   // Group paintings into rows with two paintings each

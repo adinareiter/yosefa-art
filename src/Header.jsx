@@ -3,7 +3,7 @@ export function Header() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container ">
         <div className="image-container">
-          <img src="src/pictures/Your paragraph text (1).png" alt="yosefa signature" />
+          <h1 className="signature">Yosefa</h1>
         </div>
         <button
           className="navbar-toggler"

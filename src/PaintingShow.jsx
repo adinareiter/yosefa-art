@@ -59,7 +59,7 @@ export function PaintingShow() {
                                 </div>
                               ))}
                           </div>
-                          <button
+                          {/* <button
                             className="carousel-control-prev"
                             type="button"
                             data-bs-target="#carouselExampleDark"
@@ -67,8 +67,8 @@ export function PaintingShow() {
                           >
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span className="visually-hidden">Previous</span>
-                          </button>
-                          <button
+                          </button> */}
+                          {/* <button
                             className="carousel-control-next"
                             type="button"
                             data-bs-target="#carouselExampleDark"
@@ -76,7 +76,7 @@ export function PaintingShow() {
                           >
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                     </div>

@@ -13,7 +13,11 @@ export function AdminPage(props) {
             {props.paintings.map((painting) => (
               <div key={painting.id} className="col mb-5">
                 <div className="card h-100">
-                  <img className="card-img-top" src={painting.images[0].url} alt="..." />
+                  {painting?.images[0]?.url ? (
+                    <img className="card-img-top" src={painting.images[0].url} alt="..." />
+                  ) : (
+                    <></>
+                  )}
                   <div className="card-body p-4">
                     <div className="text-center">
                       <h5 className="fw-bolder">{painting.description}</h5>

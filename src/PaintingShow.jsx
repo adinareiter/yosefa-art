@@ -8,7 +8,7 @@ export function PaintingShow() {
   const params = useParams();
 
   const handleShowPainting = () => {
-    axios.get(`http://localhost:3000/paintings/${params.id}.json`).then((response) => {
+    axios.get(`/paintings/${params.id}.json`).then((response) => {
       setPainting(response.data);
       console.log(painting);
     });

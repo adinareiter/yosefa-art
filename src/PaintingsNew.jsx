@@ -26,7 +26,7 @@ export function PaintingsNew() {
         }
       });
 
-      const response = await axios.post("http://localhost:3000/paintings.json", formData, {
+      const response = await axios.post("/paintings.json", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(response.data);

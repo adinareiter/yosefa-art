@@ -24,19 +24,19 @@ export function Content() {
   const [currentCategory, setCurrentCategory] = useState({});
 
   const handleIndexPaintings = () => {
-    axios.get("http://localhost:3000/paintings.json").then((response) => {
+    axios.get("/paintings.json").then((response) => {
       setPaintings(response.data);
     });
   };
   const handleIndexCategories = () => {
-    axios.get("http://localhost:3000/categories.json").then((response) => {
+    axios.get("/categories.json").then((response) => {
       setCategories(response.data);
     });
   };
 
   const handleCreateCategory = (params, successCallback) => {
     console.log("handleCreateCategory", params);
-    axios.post("http://localhost:3000/categories.json", params).then((response) => {
+    axios.post("/categories.json", params).then((response) => {
       setCategories([...categories, response.data]);
       successCallback();
     });
@@ -57,7 +57,7 @@ export function Content() {
   };
 
   const handleUpdatePainting = (id, params, successCallback) => {
-    axios.patch(`http://localhost:3000/paintings/${id}.json`, params).then((response) => {
+    axios.patch(`/paintings/${id}.json`, params).then((response) => {
       setPaintings(
         paintings.map((painting) => {
           if (painting.id === response.data.id) {
@@ -74,7 +74,7 @@ export function Content() {
 
   // const handleUpdateCategory = (id, params, successCallback) => {
   //   axios
-  //     .patch(`http://localhost:3000/categories/${id}.json`, params)
+  //     .patch(`/categories/${id}.json`, params)
   //     .then((response) => {
   //       setCategories(
   //         categories.map((cat) => {
@@ -92,7 +92,7 @@ export function Content() {
 
   const handleUpdateCategory = (id, params, successCallback) => {
     console.log("handleUpdateCategory", params);
-    axios.patch(`http://localhost:3000/categories/${id}.json`, params).then((response) => {
+    axios.patch(`/categories/${id}.json`, params).then((response) => {
       setCategories(
         categories.map((category) => {
           if (category.id === response.data.id) {
@@ -108,7 +108,7 @@ export function Content() {
   };
 
   const handleDestroyPainting = (painting) => {
-    axios.delete(`http://localhost:3000/paintings/${painting.id}.json`).then((response) => {
+    axios.delete(`/paintings/${painting.id}.json`).then((response) => {
       setPaintings(paintings.filter((i) => i.id !== painting.id));
       handleClose();
     });
@@ -116,7 +116,7 @@ export function Content() {
 
   const handleDestroyCategory = (category) => {
     console.log("handleDestroyCategory", category);
-    axios.delete(`http://localhost:3000/categories/${category.id}.json`).then((response) => {
+    axios.delete(`/categories/${category.id}.json`).then((response) => {
       setCategories(categories.filter((i) => i.id !== category.id));
       handleClose();
     });

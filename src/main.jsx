@@ -7,6 +7,8 @@ import axios from "axios";
 axios.defaults.baseURL =
   process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://yosefa-art-api.onrender.com";
 
+// axios.default.baseURL = process.env.NODE_ENV === "developement" ? "http://localhost:3000" : "<your-backend-url";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />

@@ -1,8 +1,64 @@
-# React + Vite
+# Yosefa's Art
+Yosefa's Art is a React application that allows others to view paintings made by Yosefa, including the ability to contact Yosefa directly through the website. An Admin can sign into the admin page where they can create new paintings by uploading images from personal files, view existing paintings, update painting details, and delete paintings.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Table of Contents
 
-Currently, two official plugins are available:
+* [Features](#features)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+  
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Admin authentication for admin login. 
+* Admin can create, view, update, and delete paintings.
+
+  
+### Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/adinareiter/yosefa-art.git
+```
+
+2. Navigate to the project directory:
+
+```
+cd yosefa-art
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Start the development server:
+```
+npm run dev
+```
+
+The app will be accessible at http://localhost:3000.
+
+### Usage
+
+* In the terminal, in this directory, install the axios library:
+
+  ```
+  npm install axios --save
+  ```
+
+ In the terminal, open your text editor for the frontend app:
+
+ ```
+code .
+```
+
+### Usage
+
+In your browser, visit http://localhost:5173 to make sure your app is working!
+
+### License 
+
+This project is licensed under the MIT License.

@@ -1,6 +1,7 @@
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SmsForm from "./SmsForm";
 export function Contact() {
   const [messageSent, setMessageSent] = useState(false);
 
@@ -52,6 +53,9 @@ export function Contact() {
               <i className="fas fa-star"></i>
             </div>
             <div className="divider-custom-line"></div>
+          </div>
+          <div>
+            <SmsForm />
           </div>
           <div className="row justify-content-center">
             <div className="col-lg-8 col-xl-7">

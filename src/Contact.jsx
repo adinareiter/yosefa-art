@@ -1,7 +1,7 @@
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SmsForm from "./SmsForm";
+
 export function Contact() {
   const [messageSent, setMessageSent] = useState(false);
 
@@ -54,9 +54,7 @@ export function Contact() {
             </div>
             <div className="divider-custom-line"></div>
           </div>
-          <div>
-            <SmsForm />
-          </div>
+          <div></div>
           <div className="row justify-content-center">
             <div className="col-lg-8 col-xl-7">
               <form onSubmit={sendEmail} id="contactForm" data-sb-form-api-token="API_TOKEN">

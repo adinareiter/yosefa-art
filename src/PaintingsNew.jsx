@@ -4,10 +4,25 @@ import axios from "axios";
 export function PaintingsNew() {
   const [errors, setErrors] = useState([]);
   const [imageUrls, setImageUrls] = useState([""]); // State to hold image URLs
-  const [uploads, setUploads] = useState(null);
-  const handleSetFile = (event) => {
+  const [upload1, setUpload1] = useState(null);
+  const [upload2, setUpload2] = useState(null);
+  const [upload3, setUpload3] = useState(null);
+  const handleSetFile1 = (event) => {
+    console.log("event", event);
     if (event.target.files.length > 0) {
-      setUploads(event.target.files[0]);
+      setUpload1(event.target.files[0]);
+    }
+  };
+  const handleSetFile2 = (event) => {
+    console.log("event", event);
+    if (event.target.files.length > 0) {
+      setUpload2(event.target.files[0]);
+    }
+  };
+  const handleSetFile3 = (event) => {
+    console.log("event", event);
+    if (event.target.files.length > 0) {
+      setUpload3(event.target.files[0]);
     }
   };
 
@@ -15,7 +30,9 @@ export function PaintingsNew() {
     event.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("uploads", uploads);
+      formData.append("upload1", upload1);
+      formData.append("upload2", upload2);
+      formData.append("upload3", upload3);
       formData.append("description", event.target.description.value);
 
       // Append non-empty image URLs to FormData
@@ -107,7 +124,13 @@ export function PaintingsNew() {
                   </button>
                 )} */}
                 <div className="mt-4">
-                  Upload Image: <input type="file" onChange={handleSetFile} />
+                  Upload Image: <input type="file" onChange={handleSetFile1} />
+                </div>
+                <div className="mt-4">
+                  Upload Image: <input type="file" onChange={handleSetFile2} />
+                </div>
+                <div className="mt-4">
+                  Upload Image: <input type="file" onChange={handleSetFile3} />
                 </div>
                 <button type="button" className="btn btn-outline-dark mt-4" onClick={handleCancel}>
                   Cancel

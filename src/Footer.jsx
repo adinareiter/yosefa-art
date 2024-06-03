@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 export function Footer() {
   const handleClick = (event) => {
     event.preventDefault();
@@ -8,15 +9,13 @@ export function Footer() {
     window.location.href = "/";
   };
   return (
-    <footer className="py-5 bg-dark flex-stick">
+    <footer className="py-5 bg-dark flex-stick text-center">
       <div className="container">
-        <p className="m-0 text-center text-white">Copyright &copy; Yosefa 2024</p>
+        <a className="m-0 text-center text-white" href="/admin-login">
+          Copyright &copy; Yosefa 2024
+        </a>
         {localStorage.jwt === undefined ? (
-          <div className="m-0 text-center text-white">
-            <a href="/admin-login" className="m-0 text-light">
-              ☈
-            </a>
-          </div>
+          <div className="m-0 text-center text-white"></div>
         ) : (
           <div className="m-0 text-center text-white">
             <a href="#" className="m-0 text-white " onClick={handleClick}>

@@ -6,14 +6,14 @@ import { Contact } from "./Contact";
 import { PaintingsIndex } from "./PaintingsIndex";
 import { PaintingShow } from "./PaintingShow";
 import { OriginalsIndex } from "./OriginalsIndex";
-import { SemiOriginalsIndex } from "./SemiOriginalsIndex";
-import { WaterdaleCollabsIndex } from "./WaterdaleCollabsIndex";
+import { SemiOriginalsIndex } from "./Categories/SemiOriginalsIndex";
+import { WaterdaleCollabsIndex } from "./Categories/WaterdaleCollabsIndex";
 import Modal from "./Modal";
 import AdminLogIn from "./AdminLogIn";
 import AdminPage from "./AdminPage";
 import AdminPaintingShow from "./AdminPaintingShow";
-import CategoriesNew from "./CategoriesNew";
-import CategoriesShow from "./CategoriesShow";
+import CategoriesNew from "./Categories/CategoriesNew";
+import CategoriesShow from "./Categories/CategoriesShow";
 
 export function Content() {
   const [paintings, setPaintings] = useState([]);
@@ -71,24 +71,6 @@ export function Content() {
       handleClose();
     });
   };
-
-  // const handleUpdateCategory = (id, params, successCallback) => {
-  //   axios
-  //     .patch(`/categories/${id}.json`, params)
-  //     .then((response) => {
-  //       setCategories(
-  //         categories.map((cat) => {
-  //           return cat.id === response.data.id ? response.data : cat;
-  //         })
-  //       );
-  //       successCallback();
-  //       setIsCategoryShowVisible(false); // Close modal after editing
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error updating category:", error);
-  //       // Handle error
-  //     });
-  // };
 
   const handleUpdateCategory = (id, params, successCallback) => {
     console.log("handleUpdateCategory", params);

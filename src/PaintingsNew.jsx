@@ -39,20 +39,6 @@ export function PaintingsNew() {
     }
   };
 
-  // const handleAddImageUrl = () => {
-  //   if (imageUrls.length < 20) {
-  //     setImageUrls([...imageUrls, ""]); // Add an empty string to imageUrls array
-  //   } else {
-  //     alert("You can only add up to 20 image URLs.");
-  //   }
-  // };
-
-  // const handleImageUrlChange = (index, url) => {
-  //   const newImageUrls = [...imageUrls];
-  //   newImageUrls[index] = url;
-  //   setImageUrls(newImageUrls);
-  // };
-
   const handleCancel = () => {
     window.location.href = "/admin-page";
   };
@@ -89,23 +75,6 @@ export function PaintingsNew() {
                     A description is required.
                   </div>
                 </div>
-                {/* <div className="form-group mb-3">
-                  {imageUrls.map((url, index) => (
-                    <input
-                      key={index}
-                      className="form-control"
-                      type="text"
-                      placeholder={`Image Url ${index + 1} *`}
-                      value={url}
-                      onChange={(event) => handleImageUrlChange(index, event.target.value)}
-                    />
-                  ))}
-                </div>
-                {imageUrls.length < 20 && (
-                  <button className="btn btn-outline-dark mt-auto" type="button" onClick={handleAddImageUrl}>
-                    Add Image URL
-                  </button>
-                )} */}
                 <div className="mt-4">
                   Upload Image: <input type="file" onChange={handleSetFile} />
                 </div>

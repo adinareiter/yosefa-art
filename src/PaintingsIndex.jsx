@@ -1,8 +1,39 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export function PaintingsIndex(props) {
-  const paintings = props.paintings;
+// PaintingCard Component
+const PaintingCard = ({ painting }) => (
+  <div className="col mb-5">
+    <div className="card h-100">
+      <Link to={`/painting/${painting.id}`}>
+        {painting.images && painting.images.length > 0 && (
+          <img className="card-img-top" src={painting.images[0].url} alt={painting.name} />
+        )}
+        <div className="card-body p-4">
+          <div className="text-center">
+            <h5 className="fw-bolder">{painting.name}</h5>
+          </div>
+        </div>
+      </Link>
+    </div>
+  </div>
+);
 
+PaintingCard.propTypes = {
+  painting: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      })
+    ),
+  }).isRequired,
+};
+
+// PaintingsIndex Component
+export function PaintingsIndex({ paintings }) {
   // Check if paintings array is not provided or is empty
   if (!paintings || paintings.length === 0) {
     return (
@@ -21,23 +52,7 @@ export function PaintingsIndex(props) {
   const rows = [];
   for (let i = 0; i < paintings.length; i += 2) {
     const rowPaintings = paintings.slice(i, i + 2);
-    const rowElements = rowPaintings.map((painting) => (
-      <div key={painting.id} className="col mb-5">
-        <div className="card h-100">
-          <Link to={`/painting/${painting.id}`}>
-            {/* Check if painting.images array exists and is not empty before accessing its first element */}
-            {painting.images && painting.images.length > 0 && (
-              <img className="card-img-top" src={painting.images[0].url} alt="..." />
-            )}
-            <div className="card-body p-4">
-              <div className="text-center">
-                <h5 className="fw-bolder">{painting.name}</h5>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </div>
-    ));
+    const rowElements = rowPaintings.map((painting) => <PaintingCard key={painting.id} painting={painting} />);
     rows.push(
       <div key={i} className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
         {rowElements}
@@ -60,3 +75,17 @@ export function PaintingsIndex(props) {
     </section>
   );
 }
+
+PaintingsIndex.propTypes = {
+  paintings: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      images: PropTypes.arrayOf(
+        PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ).isRequired,
+};

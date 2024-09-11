@@ -135,15 +135,15 @@ export function Bio(props) {
             <div className="header-images">
               <div className="image-box">
                 <img
-                  src="/src/pictures/19310.jpg" // Replace with actual image URL
-                  alt="Big Image 1"
+                  src="pictures/19310.jpg" // Replace with actual image URL
+                  alt=""
                   className="header-image"
                 />
               </div>
               <div className="image-box">
                 <img
-                  src="/src/pictures/42821.jpg" // Replace with actual image URL
-                  alt="Big Image 2"
+                  src="pictures/42821.jpg" // Replace with actual image URL
+                  alt=""
                   className="header-image"
                 />
               </div>

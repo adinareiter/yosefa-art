@@ -1,27 +1,14 @@
+import "./Header.css";
+
 export function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav id="nav" className="navbar navbar-expand-lg navbar">
       <div className="container ">
-        <div className="image-container">
-          <h1 className="signature">Yosefa</h1>
-        </div>
         <div className="d-flex" id="navbarSupportedContent">
           {localStorage.jwt === undefined ? (
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="header">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/gallery">
-                  Gallery
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/contact">
-                  Contact
-                </a>
+                <a className="nav-link active" href="/contact"></a>
               </li>
             </ul>
           ) : (
@@ -34,16 +21,6 @@ export function Header() {
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="/">
                   Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/gallery">
-                  Gallery
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" href="/contact">
-                  Contact
                 </a>
               </li>
             </ul>

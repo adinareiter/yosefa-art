@@ -25,8 +25,8 @@
   border: 5px solid #fff;
   border-radius: 15px;
   overflow: hidden;
-  width: 300px; /* Adjust width as needed */
-  height: 300px; /* Adjust height as needed */
+  width: 250px; /* Adjust width as needed */
+  height: 250px; /* Adjust height as needed */
 }
 
 .header-image {
@@ -50,12 +50,12 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   color: rgb(134, 63, 13) ;
-  font-size: 400%;
+  font-size: 300%;
 
 }
 
 .gallery-description {
-  font-size: 200%;
+  font-size: 175%;
   max-width: 800px;
   margin: 0 auto;
   color: rgb(80, 46, 21) ;
@@ -89,17 +89,17 @@
 }
 
 #art {
-  font-size: 400%;
+  font-size: 300%;
   font-weight:100;
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  text-align: left;
+  text-align:center;
  
 }
 
 #big {
-  font-size: 1400%;
+  font-size: 1000%;
   font-family: "Mrs Saint Delafield", cursive;
   font-weight: 100;
   font-style: normal;
